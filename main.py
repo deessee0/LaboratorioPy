@@ -1,5 +1,5 @@
 #======================
-# Classe per file CSV
+# Classe per file Automobile
 #======================
 
 class Automobile:
@@ -16,8 +16,14 @@ class Automobile:
     def __str__(self):
         print("Casa automobilistica: {}\nModello Automobile: {}\nNumero posti: {}\nNumero portiere: {}\nKw: {}\nTarga: {}".format())
 
+    def parla(self):
+        print("Broom Broom")
     
- 
+    def confronta(self, istance):
+        pass
+
+    def bollo(self, euro):
+        pass
 #======================
 # Corpo del programma
 #======================

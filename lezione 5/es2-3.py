@@ -12,7 +12,6 @@ class CSVFile:
 
     def __str__(self):
         pass
-
     
     def get_date_vendite(self):
         values = []
@@ -69,3 +68,6 @@ mio_file = CSVFile(name='shampoo_sales.csv')
 
 print('Nome del file: "{}"'.format(mio_file.name))
 print('Dati contenuti nel file: "{}"'.format(mio_file.get_date_vendite()))
+
+for data in mio_file.get_date_vendite():
+    print(data.strftime('%d-%m-%Y'))
