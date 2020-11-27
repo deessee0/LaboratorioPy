@@ -14,18 +14,32 @@ class Automobile:
         self.targa = targa
 
     def __str__(self):
-        print("Casa automobilistica: {}\nModello Automobile: {}\nNumero posti: {}\nNumero portiere: {}\nKw: {}\nTarga: {}".format())
-
+        print("Casa automobilistica:", self.casa_auto, "\n", "Modello Automobile:", self.modello, "\n", "Numero posti:", self.numero_posti,"\n", "Numero portiere:", self.numero_portiere, "\n", "Kw:", self.kw, "\n", "Targa:", self.targa)
+        
     def parla(self):
         print("Broom Broom")
     
     def confronta(self, istance):
-        pass
+        if self.casa_auto == istance.casa_auto and self.numero_posti == istance.numero_posti and self.numero_portiere == istance.numero_portiere and self.kw == istance.kw:
+            print("Le due autovetture hanno le stesse informazioni, esclusa la targa")
+        else: print("Le due autovetture non hanno le stesse informazioni") 
 
     def bollo(self, euro):
-        pass
+        euro = input('Inserisci la categoria della tua autovettura:')
+
+        if euro == "Euro0":
+            costokm_below100 = 3
+            costokm_below100 = 4.50
+            
+    
+    def separatore():
+        print("-~-~-o-~-~-o-~-~-")
+
 #======================
 # Corpo del programma
 #======================
 
-alfa_giulia = ("Alfa Romeo", "Giulia", 5, 5, 200, "ax9009")
+alfa_giulia = Automobile("Alfa Romeo", "Giulia", 5, 5, 200, "ax9009")
+alfa_giulia1 = Automobile("Alfa Romeo", "Giulia", 5, 5, 200, "ax9009")
+alfa_giulia.__str__()
+alfa_giulia.confronta(alfa_giulia1)
