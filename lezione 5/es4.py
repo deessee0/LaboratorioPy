@@ -25,12 +25,24 @@ class Automobile:
         else: print("Le due autovetture non hanno le stesse informazioni") 
 
     def bollo(self, euro):
-        euro = input('Inserisci la categoria della tua autovettura:')
+        euro = input('Inserisci la categoria della tua autovettura: ')
 
         if euro == "Euro0":
-            costokm_below100 = 3
-            costokm_below100 = 4.50
-            
+            if self.kw > 100:
+                bollo = 4.5 * self.kw
+            else: 
+                bollo = 3 * self.kw
+        elif euro == "Euro1":
+            if self.kw > 100:
+                bollo = 4.35 * self.kw
+            else: 
+                bollo = 2.50 * self.kw
+        elif euro == "Euro2":
+            bollo = 3 * self.kw
+        else: 
+            return print("Inserisci Euro0, Euro1 o Euro2 ")
+
+        return print("Costo del bollo:",bollo)
     
     def separatore():
         print("-~-~-o-~-~-o-~-~-")
@@ -39,7 +51,11 @@ class Automobile:
 # Corpo del programma
 #======================
 
-alfa_giulia = Automobile("Alfa Romeo", "Giulia", 5, 5, 200, "ax9009")
-alfa_giulia1 = Automobile("Alfa Romeo", "Giulia", 5, 5, 200, "ax9009")
+alfa_giulia = Automobile("Alfa Romeo", "Giulia", 5, 5, 99, "ax9009")
+alfa_giulia1 = Automobile("Alfa Romeo", "Giulia", 5, 5, 101, "ax9009")
 alfa_giulia.__str__()
+Automobile.separatore()
 alfa_giulia.confronta(alfa_giulia1)
+Automobile.separatore()
+alfa_giulia.bollo("Euro1")
+Automobile.separatore()
